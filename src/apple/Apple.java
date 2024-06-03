@@ -6,9 +6,9 @@ public class Apple {
     private final int weight;
     private final AppleColor color;
 
-    public static void prettyPrintApple(List<Apple> inventory, AppleFormatter formatter) {
+    public static void prettyPrintApple(List<Apple> inventory, Formatter f) {
         for (Apple a : inventory) {
-            String output = formatter.accept(a);
+            String output = f.accept(a);
             System.out.println(output);
         }
     }
@@ -29,3 +29,4 @@ public class Apple {
 
     public AppleColor getColor() {return this.color;}
 }
+

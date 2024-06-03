@@ -1,7 +1,5 @@
 import apple.Apple;
 import apple.AppleColor;
-import apple.AppleFancyFormatter;
-import apple.AppleSimpleFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +13,12 @@ public class Main {
         apples.add(apple1);
         apples.add(apple2);
 
-        Apple.prettyPrintApple(apples, new AppleFancyFormatter());
+        Apple.prettyPrintApple(apples, Main::prettyPrint);
 
-        Apple.prettyPrintApple(apples, new AppleSimpleFormatter());
+    }
+
+    private static String prettyPrint(Apple a) {
+        String at = a.getWeight() > 150? "heavy":"light";
+        return "A " + at + " " + a.getColor() + " apple.";
     }
 }
