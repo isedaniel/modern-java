@@ -6,7 +6,7 @@ public class Apple {
     private final int weight;
     private final AppleColor color;
 
-    public static void prettyPrintApple(List<Apple> inventory, Formatter f) {
+    public static void prettyPrintApple(List<Apple> inventory, Formatter<Apple> f) {
         for (Apple a : inventory) {
             String output = f.accept(a);
             System.out.println(output);

@@ -1,5 +1,5 @@
 package apple;
 
-public interface Formatter {
-    String accept(Apple a);
+public interface Formatter<T> {
+    String accept(T a);
 }
