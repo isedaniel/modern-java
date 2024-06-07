@@ -5,9 +5,10 @@ import java.io.IOException;
 import java.io.FileReader;
 
 public class ProcessFile {
-    public String processFile() throws IOException {
-        try (var br = new BufferedReader(new FileReader("C:\\Users\\Usuario\\IdeaProjects\\modern-java\\src\\data.txt"))) {
-            return br.readLine();
+    public String processFile(BufferedReaderProcessor bfp) throws IOException {
+        String path = "C:\\Users\\Usuario\\IdeaProjects\\modern-java\\src\\data.txt";
+        try (var br = new BufferedReader(new FileReader(path))) {
+            return bfp.process(br);
         }
     }
 }
